@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ECharts</title>
+	<!-- 引入 echarts.js -->
+	<script src="../js/echarts.min.js"></script>
+	<style>
+		<!--
+		html, body{ 
+			height:80%; 
+			}
+		.text{
+			text-indent: 2em;
+			text-align: justify;
+			font-size: 1.4em;
+			line-height: 1.5;
+			width: 70%;
+			margin: 0 auto;
+			padding-top: 1%
+		}
+		-->
+	</style>
+</head>
+
+<body>
+    <div id="main" style="width: 80%;height:100%; margin: 0 auto;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            crossStyle: {
+                color: '#999'
+            }
+        }
+    },
+    toolbox: {
+        feature: {
+            dataView: {show: true, readOnly: false},
+            magicType: {show: true, type: ['line', 'bar']},
+            restore: {show: true},
+            saveAsImage: {show: true}
+        }
+    },
+    legend: {
+        data: ['成交额（亿元）', '同比增长率']
+    },
+    xAxis: [
+        {
+            type: 'category',
+            data: ['2009年', '2010年', '2011年', '2012年', '2013年', '2014年', '2015年', '2016年', '2017年', '2018年', '2019年', ],
+            axisPointer: {
+                type: 'shadow'
+            }
+        }
+    ],
+    yAxis: [
+        {
+            type: 'value',
+            name: '成交额（亿元）',
+            min: 0,
+            max: 4500,
+            interval: 500,
+            axisLabel: {
+                formatter: '{value} '
+            }
+        },
+        {
+            type: 'value',
+            name: '同比增长率',
+            min: 0,
+            max: 900,
+            interval: 100,
+            axisLabel: {
+                formatter: '{value} %'
+            }
+        }
+    ],
+    series: [
+        {
+            name: '成交额',
+            type: 'bar',
+            data: [0.6, 11, 70, 251, 450, 805.1, 1229.4, 1770.4, 2539.7, 3143.2, 4101]
+        },
+        {
+            name: '同比增长率',
+            type: 'line',
+            yAxisIndex: 1,
+            data: [0, 1733.3, 536.4, 258.6, 79.3, 78.9, 52.7, 44.0, 48.6, 23.8, 30.1]
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+	<p class="text">从2009年到2019年十年间双十一单日成交额均呈上升趋势，但增长率总势呈下降趋势。2019年双十一全网成交额为4101亿元，超过2018年双十一的交易额3143亿元，同比增长30.1%，同比增速也好于2018年时的24%，达十年顶峰。基于迅速引流聚客的需求，2009年双十一购物节应运而生，主打品牌促销。十年时间，双十一交易规模迅速扩张，2009/2018年全网销售额分别为0.5亿/3,143亿元，九年CAGR高达164.3%，双十一也已经从阿里的品牌大促演变为全网狂欢，2018年双十一，天猫成交占比已降至67.9%。与此同时，后端物流能力快速进化，2010年双十一期间（11.11-11.16）全行业快递处理量仅1,000万件，而2018年已达18.82亿件，2018年完成1亿件快递签收用时仅2.6天（VS2013年需9天）。</p>
+</body>
+</html>

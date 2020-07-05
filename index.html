@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双十一购物街数据分析</title>
+    <link rel="stylesheet" href="css/aside.css">
+    <script type="text/javascript" src="js/aside.js"></script>
+	
+</head>
+	
+<body>
+	
+    <!--侧栏界面设计-->
+    <div id="mySidenav" class="sidenav">  
+    	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>  
+    	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    	<a href="#section1">首页</a>
+    	<a href="#section2">成交数据</a>
+    	<a href="#section3">平台对比</a>
+		<a href="#section4">消费人群</a>
+	</div>
+	<div id="main">
+	  <span style="font-size:2em; cursor:pointer" onclick="openNav()">&#9776; 导航</span>
+	</div>
+	
+	<!--首页部分-->
+	<section id="section1" class="section1"> 
+	  <div class="welcome" >
+			<p  class="Bigtitle">
+				狂欢之后，也许你想知道这些<br><br>
+		    </p>
+		    <p class="name">
+				&mdash;双十一购物节数据分析
+			</p>
+	   	 </div>
+	</section>
+	
+	<section id="section2" class="section2"> 
+		<div class="chart" >
+			<p class="Charttitle">
+			全网历年双十一单日成交额及同比增幅
+			</p>
+			<iframe src="charts/全网双十一历年单日成交额及同比增幅.html" style="width: 100%; height: 90%; margin: 0 auto;border: none; vertical-align:bottom;"></iframe>
+	   	</div>
+	</section>
+		
+	<section id="section3" class="section3">
+		<iframe src="charts/2019年“双11” 各平台销售额占比图.html" style="width: 100%; height: 50%; margin: 0 auto;border: none; vertical-align:bottom;"></iframe>
+		<iframe src="charts/平台竞争.html" style="width: 100%; height: 50%; margin: 0 auto;border: none; vertical-align:bottom;"></iframe>
+	</section>
+		
+	<section id="section4" class="section4">
+		<iframe src="charts/双十一分布人群.html" style="width: 100%; height: 26%; margin: 0 auto; border: none;"></iframe>
+		<iframe src="charts/双十一男女消费区域对比1.html" style="width: 100%; height: 26%; margin: 0 auto; border: none;"></iframe>
+		<iframe src="charts/双十一男女消费区域对比2.html" style="width: 100%; height: 26%; margin: 0 auto;border: none;"></iframe>
+		<div class="chart3">
+			<img src="img/用户群体-完成版.png" alt="用户群体" width="60%" height="60%" >
+			<p class="text">80、90、00后是关注电商的核心人群。天猫、京东、淘宝这三个电商品牌最受欢迎，其中80、90后更关注天猫，00后更爱京东；80、90后相比00后更关注拼多多。他们对电商品牌的关注并非固定，也会在其中比较选择，而当中天猫和京东竞争关系相对最紧密。</p>
+		</div>
+	</section>
+	
+	
+	 <footer>
+		<p style="color: #000000;text-align: center; font-size:16px;">
+			版权说明 | 隐私政策 | 开放平台 | 服务协议 | 联系我们
+		</p>
+			<br>
+		<p style="color: #000000;text-align: center;">
+		  <address> <!--联系方式-->
+					若有其他需要，可通过邮件联系我们，谢谢！
+					<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=reinag@foxmail.com" target="_blank">
+						<sup>E-mail</sup>
+					</a><!--邮件链接-->
+		  </address> 
+		</p>
+		    <br>
+	    <p style="color: #000000;text-align: center;">
+		copyright&copy;双十一购物节数据分析
+		</p>
+		
+	</footer>
+</body>
+</html>

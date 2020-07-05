@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ECharts</title>
+	<!-- 引入 echarts.js -->
+	<script src="../js/echarts.min.js"></script>
+	<style>
+		<!--
+		html, body{ 
+			height:80%; 
+			}
+		.text{
+			text-indent: 2em;
+			text-align: justify;
+			font-size: 1.4em;
+			line-height: 1.5;
+			width: 70%;
+			margin: 0 auto;
+			padding-top: 1%
+		}
+		-->
+	</style>
+</head>
+
+<body>
+    <div id="main" style="width: 80%;height:100%; margin: 0 auto;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+    title: {
+        text: '2019年“双11” 各平台销售额占比图',
+        subtext: '数据来源:星图数据',
+        left: 'center'
+    },
+    tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c} ({d}%)'
+    },
+    legend: {
+        orient: 'vertical',
+        left: 'left',
+        data: ['唯品会','其他','苏宁易购',  '拼多多', '京东', '天猫']
+    },
+    series: [
+        {
+            name: '销售额（亿元）',
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            data: [
+                {value: 106, name: '唯品会'},
+                {value: 152, name: '其他'},
+                {value: 200, name: '苏宁易购'},
+                {value: 250, name: '拼多多'},
+                {value: 705, name: '京东'},
+                {value: 2686, name: '天猫'}
+            ],
+            emphasis: {
+                itemStyle: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            }
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+	<p class="text">2019年天猫双十一全天成交额2684亿元，同比增长25.71%，占比65.53%，成最大赢家，也和其他平台拉开了断崖式差距；而京东以705亿元成交额，占比17.2%,位居第二；其后依次是拼多多、苏宁易购、其他和唯品会。</p>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="../js/echarts.min.js"></script>
+	<style>
+		<!--
+		html, body{ 
+			height:80%; 
+			}
+		.text{
+			text-indent: 2em;
+			text-align: justify;
+			font-size: 1.4em;
+			line-height: 1.5;
+			width: 70%;
+			margin: 0 auto;
+			padding-top: 3%
+		}
+		-->
+	</style>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 60%;height:100%;  margin: 0 auto;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {
+			title: {
+        text: '男女生消费对比 男生领先组',
+        subtext: '（百分比/%）',
+    	},
+			
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+            type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        }
+    },
+    legend: {
+        data: ['女生', '男生']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value'
+    },
+    yAxis: {
+        type: 'category',
+        data: ['3C数码', '宠物用品', '运动户外', '家居百货', '电脑办公']
+    },
+    series: [
+        {
+            name: '女生',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'insideRight'
+            },
+            data: [29, 32, 34, 41, 42]
+        },
+        {
+            name: '男生',
+            type: 'bar',
+            stack: '总量',
+            label: {
+                show: true,
+                position: 'insideRight'
+            },
+            data: [71, 68, 66, 59, 58]
+        },
+    ]
+};
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+	<p class="text">对比男女生消费区域可以得知，男女生的关注度也有着显著差异。在消费品上的关注，男生关注科技数码的更多，女生关注日常生活更多，男生总体在3C数码、宠物用品、运动户外、家居百货、电脑办公等类别上的消费领先于女生，而女生总体在食品生鲜、家装家居、美妆个护、服饰鞋包、母婴用品等类别上的消费领先于男生。</p>
+</body>
+</html>
